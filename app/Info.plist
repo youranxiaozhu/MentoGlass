@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0"><dict>
+<key>CFBundleExecutable</key><string>MentoGlass</string>
+<key>CFBundleIdentifier</key><string>local.mentoglass.mac</string>
+<key>CFBundleName</key><string>MentoGlass</string>
+<key>CFBundleDisplayName</key><string>MentoGlass</string>
+<key>CFBundlePackageType</key><string>APPL</string>
+<key>CFBundleShortVersionString</key><string>1.3.1</string>
+<key>CFBundleVersion</key><string>6</string>
+<key>CFBundleIconFile</key><string>AppIcon</string>
+<key>LSMinimumSystemVersion</key><string>26.0</string>
+<key>NSHighResolutionCapable</key><true/>
+<key>NSLocalNetworkUsageDescription</key><string>通过局域网 SSH 管理你的小米路由器 MentoHUST 认证服务。</string>
+</dict></plist>

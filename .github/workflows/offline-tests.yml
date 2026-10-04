@@ -1,0 +1,30 @@
+name: Offline tests
+on:
+  push:
+  pull_request:
+permissions:
+  contents: read
+jobs:
+  test:
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Publication audit
+        run: python3 tools/audit-publication.py
+      - name: Shell syntax
+        run: |
+          bash -n app/build.sh
+          sh -n app/mentoglass_schedule.sh
+          sh -n app/mentoglass_wireless_region.sh
+          sh -n tools/check-router.sh
+          for script in app/dualwan/*.sh; do sh -n "$script"; done
+      - name: Scheduler scenarios
+        run: python3 app/tests/test_schedule.py
+      - name: Dual-WAN tests
+        run: python3 app/tests/test_dualwan.py
+      - name: Wireless-region tests
+        run: python3 app/tests/test_wireless_region.py
+
